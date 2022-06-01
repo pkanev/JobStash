@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8A814D1B-A243-49A3-A9A6-0DDEE7C97A17}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{09763791-1BE0-4B88-924E-1F151442620D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A14A1CD4-67A0-44E2-9CB9-6F9A846ABF9B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.UnitTests", "Domain.UnitTests\Domain.UnitTests.csproj", "{2018D733-64A8-4F85-9BEB-7C11901C2B82}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UMLs", "UMLs", "{7708B49C-EC72-4622-A801-3C87CAE7B7A3}"
+	ProjectSection(SolutionItems) = preProject
+		UML\domain.pu = UML\domain.pu
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09763791-1BE0-4B88-924E-1F151442620D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09763791-1BE0-4B88-924E-1F151442620D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09763791-1BE0-4B88-924E-1F151442620D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09763791-1BE0-4B88-924E-1F151442620D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2018D733-64A8-4F85-9BEB-7C11901C2B82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2018D733-64A8-4F85-9BEB-7C11901C2B82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2018D733-64A8-4F85-9BEB-7C11901C2B82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2018D733-64A8-4F85-9BEB-7C11901C2B82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{09763791-1BE0-4B88-924E-1F151442620D} = {8A814D1B-A243-49A3-A9A6-0DDEE7C97A17}
+		{2018D733-64A8-4F85-9BEB-7C11901C2B82} = {A14A1CD4-67A0-44E2-9CB9-6F9A846ABF9B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CAF9D577-2A15-47B0-B6C3-8D3C6AA14468}
+	EndGlobalSection
+EndGlobal

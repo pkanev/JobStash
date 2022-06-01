@@ -1,0 +1,31 @@
+@startuml JobPool
+
+class Company {
+    + int Id
+    + string Name
+    + string Url
+    + string CareersPage
+    + List<Ad> Ads
+}
+
+class Technology {
+    + int Id
+    + string Name
+}
+
+class Ad {
+    + Company Company
+    + string Url
+    + List<Technology> Technologies
+}
+
+class User {
+    + GUID Id
+    + string Username
+    + List<Ad> Ads
+}
+
+Company o-- Ad
+Ad o-- Technology
+User o-- Ad
+@enduml
