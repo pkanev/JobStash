@@ -1,6 +1,6 @@
-﻿using Domain.Common;
+﻿using JobStash.Domain.Common;
 
-namespace Domain.Entities;
+namespace JobStash.Domain.Entities;
 
 public class Company : BaseAuditableEntity
 {

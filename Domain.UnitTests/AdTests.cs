@@ -1,7 +1,7 @@
-﻿using Domain.Entities;
-using Domain.Events.Ads;
+﻿using JobStash.Domain.Entities;
+using JobStash.Domain.Events.Ads;
 
-namespace Domain.UnitTests;
+namespace JobStash.Domain.UnitTests;
 
 public class AdTests
 {

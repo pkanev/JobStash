@@ -1,6 +1,6 @@
-﻿using Domain.Entities;
+﻿using JobStash.Domain.Entities;
 
-namespace Domain.UnitTests;
+namespace JobStash.Domain.UnitTests;
 
 public class CompanyTests
 {

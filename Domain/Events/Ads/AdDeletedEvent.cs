@@ -1,7 +1,7 @@
-﻿using Domain.Common;
-using Domain.Entities;
+﻿using JobStash.Domain.Common;
+using JobStash.Domain.Entities;
 
-namespace Domain.Events.Ads;
+namespace JobStash.Domain.Events.Ads;
 
 public class AdDeletedEvent : BaseEvent
 {
