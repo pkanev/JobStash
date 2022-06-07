@@ -7,15 +7,8 @@ using Moq;
 
 namespace JobStash.Application.UnitTests.Companies.Commands.UpdateCompany;
 
-public class UpdateCompanyCommandHandlerTests
+public class UpdateCompanyCommandHandlerTests : ContextBaseTests
 {
-    private readonly TestDbContext context;
-
-    public UpdateCompanyCommandHandlerTests()
-    {
-        context = Tests.GetContext();
-    }
-
     [Fact]
     public async Task UpdatingNonExistingCompanyThrowsNotFound()
     {
@@ -25,7 +18,7 @@ public class UpdateCompanyCommandHandlerTests
             Name = "Sofia Zmeys"
         };
 
-        var handler = new UpdateCompanyCommandHandler(context, new Mock<IUrlHelper>().Object);
+        var handler = new UpdateCompanyCommandHandler(Context, new Mock<IUrlHelper>().Object);
         await Assert.ThrowsAsync<NotFoundException>(() => handler.Handle(request, CancellationToken.None));
     }
 
@@ -37,8 +30,8 @@ public class UpdateCompanyCommandHandlerTests
             Name = "Old Name"
         };
         
-        context.Companies.Add(company);
-        await context.SaveChangesAsync();
+        Context.Companies.Add(company);
+        await Context.SaveChangesAsync(CancellationToken.None);
         string expectedName = "new name";
         var request = new UpdateCompanyCommand
         {
@@ -46,7 +39,7 @@ public class UpdateCompanyCommandHandlerTests
             Name = expectedName
         };
 
-        var handler = new UpdateCompanyCommandHandler(context, new Mock<IUrlHelper>().Object);
+        var handler = new UpdateCompanyCommandHandler(Context, new Mock<IUrlHelper>().Object);
         await handler.Handle(request, CancellationToken.None);
 
         Assert.Equal(expectedName, company.Name);

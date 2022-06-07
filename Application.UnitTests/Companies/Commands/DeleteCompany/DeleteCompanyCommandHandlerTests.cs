@@ -5,21 +5,14 @@ using JobStash.Domain.Entities;
 
 namespace JobStash.Application.UnitTests.Companies.Commands.DeleteCompany;
 
-public class DeleteCompanyCommandHandlerTests
+public class DeleteCompanyCommandHandlerTests : ContextBaseTests
 {
-    private readonly TestDbContext context;
-
-    public DeleteCompanyCommandHandlerTests()
-    {
-        context = Tests.GetContext();
-    }
-
     [Fact]
     public async Task DeletingNonExistantCompanyThrowsNotFound()
     {
         var request = new DeleteCompanyCommand(3);
 
-        var handler = new DeleteCompanyCommandHandler(context);
+        var handler = new DeleteCompanyCommandHandler(Context);
         await Assert.ThrowsAsync<NotFoundException>(() => handler.Handle(request, CancellationToken.None));
     }
 
@@ -31,20 +24,20 @@ public class DeleteCompanyCommandHandlerTests
             Name = "Sofia Zmeys"
         };
 
-        context.Companies.Add(company);
-        await context.SaveChangesAsync();
+        Context.Companies.Add(company);
+        await Context.SaveChangesAsync(CancellationToken.None);
 
         var ad = new Ad
         {
             Company = company,
             WebPage = new Uri("http://test.com"),
         };
-        context.Ads.Add(ad);
-        await context.SaveChangesAsync();
+        Context.Ads.Add(ad);
+        await Context.SaveChangesAsync(CancellationToken.None);
 
         var request = new DeleteCompanyCommand(company.Id);
 
-        var handler = new DeleteCompanyCommandHandler(context);
+        var handler = new DeleteCompanyCommandHandler(Context);
         await Assert.ThrowsAsync<InvalidDeleteOperationException>(() => handler.Handle(request, CancellationToken.None));
     }
 
@@ -56,15 +49,15 @@ public class DeleteCompanyCommandHandlerTests
             Name = "Sofia Zmeys"
         };
 
-        context.Companies.Add(company);
-        await context.SaveChangesAsync();
+        Context.Companies.Add(company);
+        await Context.SaveChangesAsync(CancellationToken.None);
 
         var request = new DeleteCompanyCommand(company.Id);
 
-        var handler = new DeleteCompanyCommandHandler(context);
+        var handler = new DeleteCompanyCommandHandler(Context);
         await handler.Handle(request, CancellationToken.None);
 
-        var result = context.Companies.Find(company.Id);
+        var result = Context.Companies.Find(company.Id);
         Assert.Null(result);
     }
 }

@@ -5,22 +5,15 @@ using JobStash.Domain.Entities;
 
 namespace JobStash.Application.UnitTests.Companies.Queries.GetCompany;
 
-public class GetCompanyQueryHandlerTests
+public class GetCompanyQueryHandlerTests : ContextBaseTests
 {
-    private readonly TestDbContext context;
-
-    public GetCompanyQueryHandlerTests()
-    {
-        context = Tests.GetContext();
-    }
-
     [Fact]
     public async Task GetgNonExistentCompanyThrowsNotFound()
     {
         var random = new Random();
         var request = new GetCompanyQuery(random.Next(1, 100));
 
-        var handler = new GetCompanyQueryHandler(context, Tests.Mapper);
+        var handler = new GetCompanyQueryHandler(Context, Mapper);
         await Assert.ThrowsAsync<NotFoundException>(() => handler.Handle(request, CancellationToken.None));
     }
 
@@ -28,10 +21,10 @@ public class GetCompanyQueryHandlerTests
     public async Task GetCompanyReturnsCompanyDto()
     {
         var company = new Company { Name = "Sofia Zmeys" };
-        context.Companies.Add(company);
-        await context.SaveChangesAsync();
+        Context.Companies.Add(company);
+        await Context.SaveChangesAsync(CancellationToken.None);
 
-        var handler = new GetCompanyQueryHandler(context, Tests.Mapper);
+        var handler = new GetCompanyQueryHandler(Context, Mapper);
         var result = await handler.Handle(new GetCompanyQuery(company.Id), CancellationToken.None);
 
         Assert.NotNull(result);
