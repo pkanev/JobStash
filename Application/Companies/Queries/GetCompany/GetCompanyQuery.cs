@@ -3,7 +3,6 @@ using JobStash.Application.Common.Exceptions;
 using JobStash.Application.Common.Interfaces;
 using JobStash.Domain.Entities;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 
 namespace JobStash.Application.Companies.Queries.GetCompany;
 

@@ -3,14 +3,15 @@ using JobStash.Application.Companies.Commands.DeleteCompany;
 using JobStash.Application.UnitTests.Context;
 using JobStash.Domain.Entities;
 
-namespace JobStash.Application.UnitTests.Companies.DeleteCompany;
+namespace JobStash.Application.UnitTests.Companies.Commands.DeleteCompany;
 
 public class DeleteCompanyCommandHandlerTests
 {
-    private TestDbContext context;
+    private readonly TestDbContext context;
+
     public DeleteCompanyCommandHandlerTests()
     {
-        context = TestDbContext.GetContext();
+        context = Tests.GetContext();
     }
 
     [Fact]

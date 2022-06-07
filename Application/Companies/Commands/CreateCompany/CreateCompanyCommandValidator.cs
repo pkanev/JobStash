@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using JobStash.Application.Common.Constants;
 
 namespace JobStash.Application.Companies.Commands.CreateCompany;
 
@@ -7,7 +8,7 @@ public class CreateCompanyCommandValidator : AbstractValidator<CreateCompanyComm
     public CreateCompanyCommandValidator()
     {
         RuleFor(v => v.Name)
-        .MaximumLength(200)
+        .MaximumLength(Constants.COMPANY_NAME_MAX_LENGTH)
         .NotEmpty();
     }
 }

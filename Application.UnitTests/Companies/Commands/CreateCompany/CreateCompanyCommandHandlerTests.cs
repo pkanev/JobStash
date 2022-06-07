@@ -4,7 +4,7 @@ using JobStash.Application.UnitTests.Mocks;
 using JobStash.Domain.Entities;
 using Moq;
 
-namespace JobStash.Application.UnitTests.Companies.CreateCompany;
+namespace JobStash.Application.UnitTests.Companies.Commands.CreateCompany;
 
 public class CreateCompanyCommandHandlerTests
 {

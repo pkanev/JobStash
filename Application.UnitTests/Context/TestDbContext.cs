@@ -7,13 +7,7 @@ namespace JobStash.Application.UnitTests.Context;
 
 internal class TestDbContext : DbContext, IApplicationDbContext
 {
-    public static TestDbContext GetContext()
-    {
-        var dbOptions = new DbContextOptionsBuilder<TestDbContext>().UseInMemoryDatabase(Guid.NewGuid().ToString()).Options;
-        return new TestDbContext(dbOptions);
-    }
-
-    private TestDbContext(DbContextOptions options)
+    public TestDbContext(DbContextOptions options)
         : base(options)
     {
     }
