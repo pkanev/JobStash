@@ -8,11 +8,11 @@ namespace JobStash.Application.Technologies.Commands.CreateTechnology;
 
 public record CreateTechnologyCommand(string Name) : IRequest<int>;
 
-public class CreateTechnologyCommandRequestHandler : IRequestHandler<CreateTechnologyCommand, int>
+public class CreateTechnologyCommandHandler : IRequestHandler<CreateTechnologyCommand, int>
 {
     private readonly IApplicationDbContext context;
 
-    public CreateTechnologyCommandRequestHandler(IApplicationDbContext context)
+    public CreateTechnologyCommandHandler(IApplicationDbContext context)
     {
         this.context = context;
     }

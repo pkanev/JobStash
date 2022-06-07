@@ -9,12 +9,12 @@ namespace JobStash.Application.Companies.Queries.GetCompany;
 
 public record GetCompanyQuery(int Id) : IRequest<CompanyDto>;
 
-public class GetCompanyQueryRequestHandler : IRequestHandler<GetCompanyQuery, CompanyDto>
+public class GetCompanyQueryHandler : IRequestHandler<GetCompanyQuery, CompanyDto>
 {
     private readonly IApplicationDbContext context;
     private readonly IMapper mapper;
 
-    public GetCompanyQueryRequestHandler(IApplicationDbContext context, IMapper mapper)
+    public GetCompanyQueryHandler(IApplicationDbContext context, IMapper mapper)
     {
         this.context = context;
         this.mapper = mapper;

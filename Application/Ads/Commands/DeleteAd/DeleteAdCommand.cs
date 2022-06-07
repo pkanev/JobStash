@@ -8,11 +8,11 @@ namespace JobStash.Application.Ads.Commands.DeleteAd;
 
 public record DeleteAdCommand(int Id) : IRequest;
 
-public class DeleteAdCommandRequestHandler : IRequestHandler<DeleteAdCommand>
+public class DeleteAdCommandHandler : IRequestHandler<DeleteAdCommand>
 {
     private readonly IApplicationDbContext context;
 
-    public DeleteAdCommandRequestHandler(IApplicationDbContext context)
+    public DeleteAdCommandHandler(IApplicationDbContext context)
     {
         this.context = context;
     }

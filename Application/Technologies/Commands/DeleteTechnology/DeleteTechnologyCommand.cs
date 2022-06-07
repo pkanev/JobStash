@@ -9,11 +9,11 @@ namespace JobStash.Application.Technologies.Commands.DeleteTechnology;
 
 public record DeleteTechnologyCommand(int Id) : IRequest;
 
-public class DeleteTechnologyCommandRequestHandler : IRequestHandler<DeleteTechnologyCommand, Unit>
+public class DeleteTechnologyCommandHandler : IRequestHandler<DeleteTechnologyCommand, Unit>
 {
     private readonly IApplicationDbContext context;
 
-    public DeleteTechnologyCommandRequestHandler(IApplicationDbContext context)
+    public DeleteTechnologyCommandHandler(IApplicationDbContext context)
     {
         this.context = context;
     }

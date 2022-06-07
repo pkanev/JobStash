@@ -9,12 +9,12 @@ namespace JobStash.Application.Technologies.Queries.GetTechnology;
 
 public record GetTechnologyQuery(int Id) : IRequest<TechnologyDto>;
 
-public class GetTechnologyQueryRequesthandler : IRequestHandler<GetTechnologyQuery, TechnologyDto>
+public class GetTechnologyQueryHandler : IRequestHandler<GetTechnologyQuery, TechnologyDto>
 {
     private readonly IApplicationDbContext context;
     private readonly IMapper mapper;
 
-    public GetTechnologyQueryRequesthandler(IApplicationDbContext context, IMapper mapper)
+    public GetTechnologyQueryHandler(IApplicationDbContext context, IMapper mapper)
     {
         this.context = context;
         this.mapper = mapper;

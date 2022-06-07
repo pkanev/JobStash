@@ -16,4 +16,8 @@
     <Folder Include="Exceptions\" />
     <Folder Include="ValueObjects\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
 </Project>

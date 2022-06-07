@@ -14,12 +14,12 @@ public record UpdateAdCommand : IRequest
     public bool Expired { get; init; }
 }
 
-public class UpdateAdCommandRequestHandler : IRequestHandler<UpdateAdCommand>
+public class UpdateAdCommandHandler : IRequestHandler<UpdateAdCommand>
 {
     private readonly IApplicationDbContext context;
     private readonly IUrlHelper urlHelper;
 
-    public UpdateAdCommandRequestHandler(IApplicationDbContext context, IUrlHelper urlHelper)
+    public UpdateAdCommandHandler(IApplicationDbContext context, IUrlHelper urlHelper)
     {
         this.context = context;
         this.urlHelper = urlHelper;

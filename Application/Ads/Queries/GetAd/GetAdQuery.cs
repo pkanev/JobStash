@@ -10,12 +10,12 @@ namespace JobStash.Application.Ads.Queries.GetAd;
 
 public record GetAdQuery(int Id) : IRequest<AdDto>;
 
-public class GetAdQueryRequestHandler : IRequestHandler<GetAdQuery, AdDto>
+public class GetAdQueryHandler : IRequestHandler<GetAdQuery, AdDto>
 {
     private readonly IApplicationDbContext context;
     private readonly IMapper mapper;
 
-    public GetAdQueryRequestHandler(IApplicationDbContext context, IMapper mapper)
+    public GetAdQueryHandler(IApplicationDbContext context, IMapper mapper)
     {
         this.context = context;
         this.mapper = mapper;

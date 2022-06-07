@@ -13,12 +13,12 @@ public record GetCompaniesWithPaginationQuery : IRequest<PaginatedList<CompanyBr
     public int PageSize { get; init; } = 10;
 }
 
-public class GetCompaniesWithPaginationQueryRequestHandler : IRequestHandler<GetCompaniesWithPaginationQuery, PaginatedList<CompanyBriefDto>>
+public class GetCompaniesWithPaginationQueryHandler : IRequestHandler<GetCompaniesWithPaginationQuery, PaginatedList<CompanyBriefDto>>
 {
     private readonly IApplicationDbContext context;
     private readonly IMapper mapper;
 
-    public GetCompaniesWithPaginationQueryRequestHandler(IApplicationDbContext context, IMapper mapper)
+    public GetCompaniesWithPaginationQueryHandler(IApplicationDbContext context, IMapper mapper)
     {
         this.context = context;
         this.mapper = mapper;

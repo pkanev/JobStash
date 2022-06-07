@@ -15,12 +15,12 @@ public record GetAdsForCompanyWithPaginationQuery : IRequest<PaginatedList<AdBri
     public int PageSize { get; init; } = 10;
 }
 
-public class GetAdsForCompanyWithPaginationQueryRequestHandler : IRequestHandler<GetAdsForCompanyWithPaginationQuery, PaginatedList<AdBriefDto>>
+public class GetAdsForCompanyWithPaginationQueryHandler : IRequestHandler<GetAdsForCompanyWithPaginationQuery, PaginatedList<AdBriefDto>>
 {
     private readonly IApplicationDbContext context;
     private readonly IMapper mapper;
 
-    public GetAdsForCompanyWithPaginationQueryRequestHandler(IApplicationDbContext context, IMapper mapper)
+    public GetAdsForCompanyWithPaginationQueryHandler(IApplicationDbContext context, IMapper mapper)
     {
         this.context = context;
         this.mapper = mapper;

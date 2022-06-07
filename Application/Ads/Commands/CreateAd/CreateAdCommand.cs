@@ -13,12 +13,12 @@ public record CreateAdCommand : IRequest<int>
     public int[]? TechnologyIds { get; init; }
 }
 
-public class CreateAdCommandRequestHandler : IRequestHandler<CreateAdCommand, int>
+public class CreateAdCommandHandler : IRequestHandler<CreateAdCommand, int>
 {
     private readonly IApplicationDbContext context;
     private readonly IUrlHelper urlHelper;
 
-    public CreateAdCommandRequestHandler(IApplicationDbContext context, IUrlHelper urlHelper)
+    public CreateAdCommandHandler(IApplicationDbContext context, IUrlHelper urlHelper)
     {
         this.context = context;
         this.urlHelper = urlHelper;

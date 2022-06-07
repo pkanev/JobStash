@@ -16,9 +16,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UMLs", "UMLs", "{7708B49C-E
 		UML\domain.pu = UML\domain.pu
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{1DC8F1D5-04AE-4661-AD56-428220DA247D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{1DC8F1D5-04AE-4661-AD56-428220DA247D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.UnitTests", "Application.UnitTests\Application.UnitTests.csproj", "{481389FC-CA59-412F-814E-B4AA0D09C950}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.UnitTests", "Application.UnitTests\Application.UnitTests.csproj", "{481389FC-CA59-412F-814E-B4AA0D09C950}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

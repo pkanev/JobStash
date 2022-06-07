@@ -7,11 +7,11 @@ namespace JobStash.Application.Technologies.Commands.AddTechnologyToAd;
 
 public record AddTechnologyToAdCommand(int AdId, int TechnologyId) : IRequest;
 
-public class AddTechnologyToAdCommandRequestHandler : IRequestHandler<AddTechnologyToAdCommand, Unit>
+public class AddTechnologyToAdCommandHandler : IRequestHandler<AddTechnologyToAdCommand, Unit>
 {
     private readonly IApplicationDbContext context;
 
-    public AddTechnologyToAdCommandRequestHandler(IApplicationDbContext context)
+    public AddTechnologyToAdCommandHandler(IApplicationDbContext context)
     {
         this.context = context;
     }

@@ -11,11 +11,11 @@ public record UpdateTechnologyCommand : IRequest
     public string Name { get; init; } = null!;
 }
 
-public class UpdateTechnologyCommandRequestHandler : IRequestHandler<UpdateTechnologyCommand, Unit>
+public class UpdateTechnologyCommandHandler : IRequestHandler<UpdateTechnologyCommand, Unit>
 {
     private readonly IApplicationDbContext context;
 
-    public UpdateTechnologyCommandRequestHandler(IApplicationDbContext context)
+    public UpdateTechnologyCommandHandler(IApplicationDbContext context)
     {
         this.context = context;
     }

@@ -7,11 +7,11 @@ namespace JobStash.Application.Technologies.Commands.RemoveTechnologyFromAd;
 
 public record RemoveTechnologyFromAdCommand(int AdId, int TechnologyId) : IRequest;
 
-public class RemoveTechnologyFromAdCommandRequestHandler : IRequestHandler<RemoveTechnologyFromAdCommand, Unit>
+public class RemoveTechnologyFromAdCommandHandler : IRequestHandler<RemoveTechnologyFromAdCommand, Unit>
 {
     private readonly IApplicationDbContext context;
 
-    public RemoveTechnologyFromAdCommandRequestHandler(IApplicationDbContext context)
+    public RemoveTechnologyFromAdCommandHandler(IApplicationDbContext context)
     {
         this.context = context;
     }
