@@ -26,7 +26,7 @@ public class CreateTechnologyCommandHandlerTests : ContextBaseTests
     [InlineData("   tech")]
     [InlineData("tech   ")]
     [InlineData(" tech   ")]
-    [InlineData(" tEcH   ")]
+    [InlineData("  tEcH  ")]
     public async Task AddingADuplicateTechnologyThrowsDuplicatingTechnology(string name)
     {
         Context.Technologies.Add(new Technology { Name = name.Trim() });

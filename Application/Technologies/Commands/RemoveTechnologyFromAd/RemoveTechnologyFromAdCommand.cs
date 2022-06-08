@@ -26,7 +26,7 @@ public class RemoveTechnologyFromAdCommandHandler : IRequestHandler<RemoveTechno
         if (technology == null)
             throw new NotFoundException(nameof(Technology), request.TechnologyId);
 
-        ad.Technologies.Add(technology);
+        ad.Technologies.Remove(technology);
         await context.SaveChangesAsync(cancellationToken);
         return Unit.Value;
     }
