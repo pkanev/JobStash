@@ -30,4 +30,13 @@
     <ProjectReference Include="..\Application\Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Technologies\Commands\DeleteTechnology\" />
+    <Folder Include="Technologies\Commands\AddTechnologyToAd\" />
+    <Folder Include="Technologies\Commands\RemoveTechnologyFromAd\" />
+    <Folder Include="Technologies\Commands\UpdateTechnology\" />
+    <Folder Include="Technologies\Queries\GetTechnology\" />
+    <Folder Include="Technologies\Queries\GetTechnologiesForAdWithPagination\" />
+  </ItemGroup>
+
 </Project>

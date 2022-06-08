@@ -27,7 +27,7 @@ public class CreateCompanyCommandHandler : IRequestHandler<CreateCompanyCommand,
     {
         var entity = new Company();
 
-        entity.Name = request.Name;
+        entity.Name = request.Name.Trim();
 
         if (!string.IsNullOrWhiteSpace(request.WebPage))
             entity.WebPage = urlHelper.GetUri(request.WebPage);

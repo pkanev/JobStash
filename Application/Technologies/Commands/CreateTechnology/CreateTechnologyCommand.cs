@@ -19,11 +19,12 @@ public class CreateTechnologyCommandHandler : IRequestHandler<CreateTechnologyCo
 
     public async Task<int> Handle(CreateTechnologyCommand request, CancellationToken cancellationToken)
     {
-        if (context.Technologies.Any(t => t.Name.ToLower() == request.Name.ToLower()))
+        var trimmedName = request.Name.Trim();
+        if (context.Technologies.Any(t => t.Name.ToLower() == trimmedName.ToLower()))
             throw new DuplicatingTechnologyExcpetion(request.Name);
 
         var entity = new Technology();
-        entity.Name = request.Name;
+        entity.Name = trimmedName;
 
         entity.AddDomainEvent(new TechnologyCreatedEvent(entity));
 
