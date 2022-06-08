@@ -6,6 +6,9 @@ public class UpdateAdCommandValidator : AbstractValidator<UpdateAdCommand>
 {
     public UpdateAdCommandValidator()
     {
+        RuleFor(v => v.Id)
+            .GreaterThan(0);
+
         RuleFor(v => v.CompanyId)
             .GreaterThan(0);
 

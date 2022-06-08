@@ -6,7 +6,7 @@ namespace JobStash.Application.UnitTests.Companies.Commands.CreateCompany;
 public class CreateCompanyCommandValidatorTests
 {
     [Fact]
-    public void NewComapnyShouldNotHaveNullName()
+    public void NewCompanyShouldNotHaveNullName()
     {
         var validator = new CreateCompanyCommandValidator();
         var request = new CreateCompanyCommand();
