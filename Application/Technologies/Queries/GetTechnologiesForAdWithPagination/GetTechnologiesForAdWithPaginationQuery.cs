@@ -35,14 +35,14 @@ public class GetTechnologiesForAdWithPaginationQueryHandler : IRequestHandler<Ge
         CancellationToken cancellationToken)
     {
         var ad = await context.Ads
-            .Include(a => a.Technologies)
             .FirstOrDefaultAsync(a => a.Id == request.AdId, cancellationToken);
 
         if (ad == null)
             throw new NotFoundException(nameof(Ad), request.AdId);
-
-        return await ad.Technologies
-            .AsQueryable()
+        
+        return await context.Technologies
+            .Where(t => t.Ads.Any(a => a.Id == request.AdId))
+            .OrderBy(t => t.Name)
             .ProjectTo<TechnologyDto>(mapper.ConfigurationProvider)
             .PaginatedListAsync(request.PageNumber, request.PageSize, cancellationToken);
     }

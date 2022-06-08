@@ -1,4 +1,5 @@
-﻿using JobStash.Application.Companies.Queries.GetCompaniesWithPagination;
+﻿using JobStash.Application.Common.Models;
+using JobStash.Application.Companies.Queries.GetCompaniesWithPagination;
 using JobStash.Application.UnitTests.Context;
 using JobStash.Domain.Entities;
 
@@ -35,7 +36,7 @@ public class GetCompaniesWithPaginationQueryHandlerTests : ContextBaseTests
         var result = await handler.Handle(request, CancellationToken.None);
 
         Assert.NotNull(result);
-        Assert.IsType<List<CompanyBriefDto>>(result.Items);
+        Assert.IsType<PaginatedList<CompanyBriefDto>>(result);
         Assert.Equal(Context.Companies.Count(), result.TotalCount);
         Assert.Equal(1, result.TotalPages);
         Assert.Equal(1, result.PageNumber);
